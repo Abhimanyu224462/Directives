@@ -1,0 +1,44 @@
+<h3 class="text-center">Custom Directive - bg on odd rows</h3>
+
+<div class="container w-50 border text-center mt-3">
+    <table class="table table-bordered mt-3">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">PName</th>
+            <th scope="col">price</th>
+            <th scope="col">Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productList; let i = index;let o = odd" [appMyCustom] = "o">
+           <ng-container>
+            <th scope="row">{{i}}-{{o}}</th>
+            <td>{{product.productName}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.qty}}</td>
+           </ng-container>
+          </tr>
+          
+      </table>
+
+      <p appMyCustom2></p> 
+
+      <br>
+
+      <h2 class="mb-3" appMyCustom3>Host Listner wala custom directive</h2>
+
+      <br>
+
+      <h2 class="mb-3" appMyCustom4></h2>
+
+      <br>
+
+      <div class="container border shadow-sm mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Enter in Lower Case</label>
+        <input type="text" class="form-control mb-3"  placeholder="Enter Lower Case" appMyCustom5>
+      </div>
+
+</div>
+
+

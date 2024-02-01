@@ -1,0 +1,39 @@
+<h3>List of Members</h3>
+
+<ul>
+    <li *ngFor="let members of Group6 ; let i = index; let o = odd">{{o}}-{{i}}-{{members}}</li>
+</ul>
+
+
+<select class="w-50" [value] = "members1" [(ngModel)] = "names">
+    <option> Select</option>
+    <option *ngFor="let members1 of Group6">{{members1}}</option>
+</select>
+
+<button (click)="show()">Show</button>
+<h2>names:{{names}}</h2>
+
+
+<div class="container w-50 border text-center">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">PName</th>
+            <th scope="col">price</th>
+            <th scope="col">Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productList; let i = index">
+           <ng-container *ngIf="product.price > 30000">
+            <th scope="row">{{i+1}}</th>
+            <td>{{product.productName}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.qty}}</td>
+           </ng-container>
+          </tr>
+          
+      </table>
+</div>
+

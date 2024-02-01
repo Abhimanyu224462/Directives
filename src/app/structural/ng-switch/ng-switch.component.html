@@ -1,0 +1,28 @@
+<h3>ngSwitch</h3>
+
+<select [(ngModel)] = "daySelected">
+    <option >Select</option>
+    <option *ngFor="let item of weekdays" [value]="item">{{item}}</option>
+</select>
+
+Day Selected : {{daySelected}}
+
+<h5 *ngIf = "daySelected == 'Sunday'">Selected Day is Sunday</h5>
+<h5 *ngIf = "daySelected == 'Monday'">Selected Day is Monday</h5>
+<h5 *ngIf = "daySelected == 'Tuesday'">Selected Day is Tuesday</h5>
+<h5 *ngIf = "daySelected == 'Wednesday'">Selected Day is Wednesday</h5>
+<h5 *ngIf = "daySelected == 'Thrusday'">Selected Day is Thrusday</h5>
+<h5 *ngIf = "daySelected == 'Friday'">Selected Day is Friday</h5>
+<h5 *ngIf = "daySelected == 'Saturday'">Selected Day is Saturday</h5>
+<h5 *ngIf = "daySelected != 'Sunday' && daySelected != 'Monday' && daySelected != 'Tuesday'">Nothing Selected </h5>
+
+<div class="container w-50" [ngSwitch]="daySelected">
+<h5 *ngSwitchCase = "'Sunday'">Selected Day is Sunday</h5>
+<h5 *ngSwitchCase = "'Monday'">Selected Day is Monday</h5>
+<h5 *ngSwitchCase = "'Tuesday'">Selected Day is Tuesday</h5>
+<h5 *ngSwitchCase = "'Wednesday'">Selected Day is Wednesday</h5>
+<h5 *ngSwitchCase = "'Thrusday'">Selected Day is Thrusday</h5>
+<h5 *ngSwitchCase = "'Friday'">Selected Day is Friday</h5>
+<h5 *ngSwitchCase = "'Saturday'">Selected Day is Saturday</h5>
+<h5 *ngSwitchDefault>Nothing Selected </h5>
+</div>

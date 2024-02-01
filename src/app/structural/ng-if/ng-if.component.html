@@ -1,0 +1,108 @@
+<h3 class="text-center mt-3 border shadow-sm container w-25">ngIf Directive Example</h3>
+
+<div class="container w-50 mt-5 border shadow-sm">
+<div class="input-group mb-3 mt-3" *ngIf="isDisplay">
+    <span class="input-group-text" id="inputGroup-sizing-default">Mobile</span>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="input-group mb-3 mt-3" *ngIf="!isDisplay">
+    <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <button class="btn btn-secondary mb-3" (click)="toggle()">Toggle</button>
+</div>
+
+<!-- =======Using Radio====== -->
+
+<div class="container w-50 mt-5 border shadow-sm">
+    <div class="input-group mb-3 mt-3" *ngIf="contactPrefrence == 'mobile'" >
+        <span class="input-group-text" id="inputGroup-sizing-default" >Mobile</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    
+      <div class="input-group mb-3 mt-3" *ngIf="contactPrefrence == 'email'" >
+        <span class="input-group-text" id="inputGroup-sizing-default" >Email</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="mobile" [(ngModel)] = "contactPrefrence">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Mobile
+        </label>
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="email" [(ngModel)] = "contactPrefrence">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Email
+        </label>
+      </div>
+ 
+    </div>
+
+    <!-- =======Using else====== -->
+
+<div class="container w-50 mt-5 border shadow-sm">
+    <div class="input-group mb-3 mt-3" *ngIf="contactPrefrence1 == 'mobile1'; else elseBlock" >
+        <span class="input-group-text" id="inputGroup-sizing-default" >Mobile</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+    <ng-template #elseBlock>
+      <div class="input-group mb-3 mt-3" *ngIf="contactPrefrence1 == 'email1'" >
+        <span class="input-group-text" id="inputGroup-sizing-default" >Email</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    </ng-template>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="mobile1" [(ngModel)] = "contactPrefrence1">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Mobile
+        </label>
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="email1" [(ngModel)] = "contactPrefrence1">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Email
+        </label>
+      </div>
+ 
+    </div>
+    
+       <!-- =======Using else and then====== -->
+
+<div class="container w-50 mt-5 border shadow-sm">
+
+    <p *ngIf="contactPrefrence2 == 'mobile2'; then thenBlock, else elseBlock"></p>
+
+    <ng-template #thenBlock>
+    <div class="input-group mb-3 mt-3" *ngIf="contactPrefrence2 == 'mobile2'" >
+        <span class="input-group-text" id="inputGroup-sizing-default"  >Mobile</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    </ng-template>
+
+    <div #elseBlock>
+      <div class="input-group mb-3 mt-3" *ngIf="contactPrefrence2 == 'email2'" >
+        <span class="input-group-text" id="inputGroup-sizing-default" >Email</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    </div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="mobile2" [(ngModel)] = "contactPrefrence2">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Mobile
+        </label>
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="email2" [(ngModel)] = "contactPrefrence2">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Email
+        </label>
+      </div>
+ 
+    </div>

@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+.bg{
+    background-color: aquamarine;
+}
+
+.bg-one{
+    background-color: pink;
+}
+
+.bg-two{
+    cursor: pointer;
+    font-style: italic;
+    color: rgb(236, 52, 107);
+    border: 2px rgb(66, 69, 236);
+}
+
+.bg-three{
+    // cursor: pointer;
+    font-style: normal;
+    color: rgb(31, 13, 223);
+    // border: 2px rgb(66, 69, 236);
+}
+
+.bg-four{
+    font-weight: bold;
+    color: red;
+}
