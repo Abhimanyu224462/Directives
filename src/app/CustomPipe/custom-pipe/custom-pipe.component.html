@@ -1,0 +1,27 @@
+<div class="container text-center"><h3>Custom-Pipe ToLowerCase</h3></div>
+
+<div class="container w-50 border text-center mt-3">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">PName</th>
+            <th scope="col">price</th>
+            <th scope="col">Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productList; let i = index">
+           <ng-container>
+            <th scope="row">{{i+1}}</th>
+            <td>{{product.productName | customPipe1 }}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.qty}}</td>
+           </ng-container>
+          </tr>
+          
+      </table>
+
+
+      <!-- <button class="btn btn-secondary" (click)="save()">Save</button> -->
+</div>

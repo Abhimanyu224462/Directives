@@ -15,6 +15,10 @@ import { MyCustom3Directive } from './directives/my-custom3.directive';
 import { MyCustom4Directive } from './directives/my-custom4.directive';
 import { CustomPipe1Pipe } from './CustomPipe/custom-pipe1.pipe';
 import { MyCustom5Directive } from './directives/my-custom5.directive';
+import { CustomPipeComponent } from './CustomPipe/custom-pipe/custom-pipe.component';
+import { CustomPipe2Pipe } from './CustomPipe/custom-pipe2.pipe';
+import { CustomPipe2Component } from './CustomPipe/custom-pipe2/custom-pipe2.component';
+import { CustomPipe3Component } from './CustomPipe/custom-pipe3/custom-pipe3.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +33,19 @@ import { MyCustom5Directive } from './directives/my-custom5.directive';
     MyCustom3Directive,
     MyCustom4Directive,
     CustomPipe1Pipe,
-    MyCustom5Directive
+    MyCustom5Directive,
+    CustomPipeComponent,
+    CustomPipe2Pipe,
+    CustomPipe2Component,
+    CustomPipe3Component
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CustomPipe2Pipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
